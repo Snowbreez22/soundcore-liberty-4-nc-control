@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="soundcore-token" content="__TOKEN__">
+<title>Liberty 4 NC · Soundcore Control</title>
+<link rel="stylesheet" href="/style.css">
+<script defer src="/app.js"></script>
+</head>
+<body>
+<main>
+<header>
+  <div><p class="brand">SOUNDCORE</p><h1>Liberty 4 NC</h1></div>
+  <button id="connect" class="secondary">Read earbuds</button>
+</header>
+<p id="status" role="status">Reading earbuds…</p>
+<section>
+  <h2>Listening mode</h2>
+  <fieldset id="modes" disabled aria-label="Listening mode">
+    <button data-mode="0" aria-pressed="false">Noise Cancellation</button>
+    <button data-mode="1" aria-pressed="false">Transparency</button>
+    <button data-mode="2" aria-pressed="false">Normal</button>
+  </fieldset>
+  <p id="mode-note" class="note" hidden>The earbuds haven’t reported an active listening mode.</p>
+</section>
+<section>
+  <div class="heading"><h2>Equalizer</h2><button id="flat" class="secondary" disabled>Flatten curve</button></div>
+  <fieldset id="eq" disabled aria-label="Equalizer">
+    <canvas id="curve" width="800" height="135" aria-hidden="true"></canvas>
+    <div id="bands"></div>
+    <div class="foot"><p id="eq-note" class="note">Changes apply to both earbuds.</p><button id="apply" type="button">Apply EQ</button></div>
+  </fieldset>
+</section>
+</main>
+</body>
+</html>
